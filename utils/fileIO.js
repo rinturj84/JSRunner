@@ -8,12 +8,12 @@ export const readJSONFile = (fileName) => {
         return
     }
     const fileNames = Object.keys(allInputData);
-    if (fileNames.at(fileName)) {
+    if (fileNames.includes(fileName)) {
         return allInputData[fileName]
     }
 };
 
-export const writeToFile = (fileName, outputData, type = "json") => {
+export const writeToFile = (fileName, outputData = '', type = "json") => {
   fs.writeFile(
     `./data/output/${fileName}.${type}`,
     JSON.stringify(outputData),
