@@ -1,21 +1,8 @@
-import fs from 'fs';
-import inputData from "../data/index.js";
-const fileName = "vendingSlots";
+import { readJSONFile, writeToFile } from "../utils/fileIO";
 
-const newVal = inputData[fileName].map((item) => {
-  if (item.data.extSlotNumber && typeof item.data.extSlotNumber !== 'number') {
-    item.data.extSlotNumber = Number(item.data.extSlotNumber);
-  }
-  return item;
-});
+// Change to your input json file name.
+const fileName = "inputFileName";
+const inputData = readJSONFile(fileName);
+const outputData = inputData; // Implement the relevant parser and store into outputData variable.
 
-// const newVal2 = inputData[fileName].map((elem) => {
-//   const { data } = elem;
-//   const { key, ...feature } = data;
-//   elem.data = { ...feature, displayName: feature.name };
-//   return elem;
-// });
-fs.writeFile(`./data/output/${fileName}.json`, JSON.stringify(newVal), 'utf8',console.log);
-console.log("========START========");
-console.log(JSON.stringify(newVal, null, 2));
-console.log("=========END=========");
+writeToFile(fileName, outputData);
