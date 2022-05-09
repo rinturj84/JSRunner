@@ -10,6 +10,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "esm": "^3.2.25"
+    "@aws-sdk/util-dynamodb": "^3.85.0",
+    "aws-sdk": "^2.1113.0",
+    "csvtojson": "^2.0.10",
+    "esm": "^3.2.25",
+    "json2csv": "^5.0.7",
+    "uuid": "^8.3.2"
   }
 }

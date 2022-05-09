@@ -16,10 +16,10 @@ export const readJSONFile = (fileName) => {
 export const writeToFile = (fileName, outputData = '', type = "json") => {
   fs.writeFile(
     `./data/output/${fileName}.${type}`,
-    JSON.stringify(outputData),
+    type === "json" ? JSON.stringify(outputData) : outputData,
     "utf8",
     console.log
   );
   console.log("🚀 Finished writing into file 😀");
-  console.log(`🛣️ Path: /data/output/${fileName}.${type}`);
+  return console.log(`🛣️ Path: /data/output/${fileName}.${type}`);
 };
